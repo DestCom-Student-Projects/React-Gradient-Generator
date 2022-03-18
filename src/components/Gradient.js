@@ -9,7 +9,7 @@ function Gradient({ color, setColor, index }) {
 
   return (
     <>
-      <div className="m-auto bg-gray-800 shadow-2xl rounded-lg overflow-hidden">
+      <div className="lg:w-11/12 m-auto bg-gray-800 shadow-2xl rounded-lg overflow-hidden">
         {index === 0 && (
           <div className="py-3 px-4 flex">
             <div className="rounded-full w-3 h-3 bg-red-500 mr-2"></div>

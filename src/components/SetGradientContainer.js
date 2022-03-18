@@ -54,7 +54,7 @@ function SetGradientContainer({
           index={index}
         />
       ))}
-      <div className="m-auto bg-gray-800 shadow-2xl rounded-lg overflow-hidden">
+      <div className="lg:w-11/12 m-auto bg-gray-800 shadow-2xl rounded-lg overflow-hidden">
         <p className="text-gray-400">Gradient rotation</p>
         <div className="py-4 px-4 mt-1 text-white text-xl flex justify-evenly">
           <input
