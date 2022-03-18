@@ -8,6 +8,9 @@ function GradientCSSCode({ gradientCSS }) {
       </div>
       <p className="text-gray-400">Code CSS</p>
       <div className="py-4 px-4 mt-1 text-white text-xl">
+        <p className="text-gray-600 text-left text-base">
+          {"/* Click on line to copy */"}
+        </p>
         <div className="mb-2">
           <p className="text-gray-600 text-left">{"/* Basic : */"}</p>
           <p
@@ -15,7 +18,9 @@ function GradientCSSCode({ gradientCSS }) {
             onClick={() => navigator.clipboard.writeText(gradientCSS.basic)}
           >
             <span className="text-blue-400 text-lg">gradient: </span>
-            <span className="text-gray-400 text-lg">{gradientCSS.basic}</span>
+            <span className="text-gray-400 text-lg">
+              {gradientCSS.basic + ";"}
+            </span>
           </p>
           <p className="text-gray-600 text-left">{"/* Safari : */"}</p>
           <p
@@ -23,7 +28,9 @@ function GradientCSSCode({ gradientCSS }) {
             onClick={() => navigator.clipboard.writeText(gradientCSS.webkit)}
           >
             <span className="text-blue-400 text-lg">gradient: </span>
-            <span className="text-gray-400 text-lg">{gradientCSS.webkit}</span>
+            <span className="text-gray-400 text-lg">
+              {gradientCSS.webkit + ";"}
+            </span>
           </p>
           <p className="text-gray-600 text-left">{"/* Mozilla firefox : */"}</p>
           <p
@@ -31,7 +38,9 @@ function GradientCSSCode({ gradientCSS }) {
             onClick={() => navigator.clipboard.writeText(gradientCSS.moz)}
           >
             <span className="text-blue-400 text-lg">gradient: </span>
-            <span className="text-gray-400 text-lg">{gradientCSS.moz}</span>
+            <span className="text-gray-400 text-lg">
+              {gradientCSS.moz + ";"}
+            </span>
           </p>
         </div>
 

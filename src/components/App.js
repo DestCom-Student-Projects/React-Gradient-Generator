@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App lg:h-screen w-screen bg-color-1">
       <Header />
-      <div className="flex lg:justify-evenly w-11/12 m-auto">
+      <div className="flex flex-col-reverse lg:flex-row lg:justify-evenly w-11/12 m-auto">
         <GradientViewer colorArray={colorArray} gradientCSS={gradientCSS} />
         <SetGradientContainer
           colorArray={colorArray}

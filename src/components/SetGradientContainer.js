@@ -45,7 +45,7 @@ function SetGradientContainer({
   }, [colorArray, gradientRotation, colorLimit]);
 
   return (
-    <section className="w-3/6 self-center">
+    <section className="lg:w-3/6 self-center mb-12 lg:mb-0">
       {colorArray.map((color, index) => (
         <Gradient
           key={index}
@@ -54,7 +54,7 @@ function SetGradientContainer({
           index={index}
         />
       ))}
-      <div className="w-11/12 m-auto bg-gray-800 shadow-2xl rounded-lg overflow-hidden">
+      <div className="m-auto bg-gray-800 shadow-2xl rounded-lg overflow-hidden">
         <p className="text-gray-400">Gradient rotation</p>
         <div className="py-4 px-4 mt-1 text-white text-xl flex justify-evenly">
           <input
@@ -64,13 +64,14 @@ function SetGradientContainer({
             step={1}
             value={gradientRotation}
             onChange={(e) => setGradientRotation(e.target.value)}
-            className="form-range w-11/12 h-6 p-0 focus:outline-none focus:ring-0 focus:shadow-none"
+            className="form-range w-11/12 h-6 p-0 focus:outline-none focus:ring-0 focus:shadow-none cursor-pointer"
           />
           <input
             className="outline-none bg-transparent placeholder:text-gray-500 text-gray-500 w-1/12 text-center"
             onInput={(e) => {
-              if (e.target.value === "") {
-                setGradientRotation(90);
+              if (!e.target.value.match(/^[0-9]*$/)) return;
+              if (e.target.value < 0) {
+                setGradientRotation(0);
               } else if (e.target.value > 360) {
                 setGradientRotation(360);
               } else {

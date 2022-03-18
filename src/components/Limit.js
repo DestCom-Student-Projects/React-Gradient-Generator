@@ -15,15 +15,16 @@ function Limit({ limit, setColorLimit, index }) {
             return newColorLimit;
           })
         }
-        className="form-range w-11/12 h-6 p-0 focus:outline-none focus:ring-0 focus:shadow-none"
+        className="form-range w-11/12 h-6 p-0 focus:outline-none focus:ring-0 focus:shadow-none cursor-pointer"
       />
       <input
         className="outline-none bg-transparent placeholder:text-gray-500 text-gray-500 w-1/12 text-center"
         onInput={(e) => {
-          if (e.target.value === "") {
+          if (!e.target.value.match(/^[0-9]*$/)) return;
+          if (e.target.value < 0) {
             setColorLimit((prev) => {
               const newColorLimit = [...prev];
-              newColorLimit[index] = 50;
+              newColorLimit[index] = 0;
               return newColorLimit;
             });
           } else if (e.target.value > 100) {
@@ -40,6 +41,7 @@ function Limit({ limit, setColorLimit, index }) {
             });
           }
         }}
+        onBlur={(e) => console.log(e)}
         value={limit}
         placeholder={limit}
       />
