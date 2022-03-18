@@ -42,6 +42,7 @@ function SetGradientContainer({
       newGradientCSS.webkit = "-webkit-linear-gradient" + secondPart;
       return newGradientCSS;
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [colorArray, gradientRotation, colorLimit]);
 
   return (
